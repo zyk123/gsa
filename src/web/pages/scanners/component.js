@@ -25,8 +25,6 @@ import {isDefined} from 'gmp/utils/identity';
 import {shorten} from 'gmp/utils/string';
 import {hasId} from 'gmp/utils/id';
 
-import {CLIENT_CERTIFICATE_CREDENTIAL_TYPE} from 'gmp/models/credential';
-
 import {renewSessionTimeout} from 'web/store/usersettings/actions';
 import {loadUserSettingDefaults} from 'web/store/usersettings/defaults/actions';
 import {getUserSettingsDefaults} from 'web/store/usersettings/defaults/selectors';
@@ -52,9 +50,8 @@ class ScannerComponent extends React.Component {
       scannerDialogVisible: false,
     };
 
-    this.handleCloseCredentialsDialog = this.handleCloseCredentialsDialog.bind(
-      this,
-    );
+    this.handleCloseCredentialsDialog =
+      this.handleCloseCredentialsDialog.bind(this);
     this.handleCloseScannerDialog = this.handleCloseScannerDialog.bind(this);
     this.openCredentialsDialog = this.openCredentialsDialog.bind(this);
     this.openScannerDialog = this.openScannerDialog.bind(this);
@@ -135,12 +132,6 @@ class ScannerComponent extends React.Component {
 
   openCredentialsDialog() {
     this.handleInteraction();
-
-    this.setState({
-      base: CLIENT_CERTIFICATE_CREDENTIAL_TYPE,
-      credentialDialogVisible: true,
-      credentialTypes: [CLIENT_CERTIFICATE_CREDENTIAL_TYPE],
-    });
   }
 
   closeCredentialsDialog() {
@@ -202,19 +193,10 @@ class ScannerComponent extends React.Component {
   }
 
   handleDownloadCertificate(scanner) {
-    const {
-      detailsExportFileName,
-      username,
-      onCertificateDownloaded,
-    } = this.props;
-    const {
-      creationTime,
-      entityType,
-      id,
-      modificationTime,
-      name,
-      ca_pub,
-    } = scanner;
+    const {detailsExportFileName, username, onCertificateDownloaded} =
+      this.props;
+    const {creationTime, entityType, id, modificationTime, name, ca_pub} =
+      scanner;
     const filename = generateFilename({
       creationTime: creationTime,
       extension: 'pem',
