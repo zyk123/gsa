@@ -7,6 +7,8 @@ ENV NODE_VERSION=node_18.x
 ENV NODE_KEYRING=/usr/share/keyrings/nodesource.gpg
 ENV DISTRIBUTION=bookworm
 
+RUN set -eux && sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates \

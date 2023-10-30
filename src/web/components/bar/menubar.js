@@ -275,9 +275,9 @@ const MenuBar = ({isLoggedIn, capabilities}) => {
             )}
           </Menu>
           <Menu title={_('Help')}>
-            <MenuHelpEntry title={_('User Manual')} />
+            {/*<MenuHelpEntry title={_('User Manual')} />*/}
             <MenuEntry title={_('CVSS Calculator')} to="cvsscalculator" />
-            <MenuEntry title={_('About')} to="about" />
+            {/*<MenuEntry title={_('About')} to="about" />*/}
           </Menu>
         </Ul>
       </Wrapper>

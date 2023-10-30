@@ -21,17 +21,21 @@ export const BROWSER_LANGUAGE = 'Browser Language';
 export const getLanguageCodes = () => Object.keys(Languages);
 
 const Languages = {
-  de: {
+  /*de: {
     name: 'German',
     native_name: 'Deutsch',
-  },
+  },*/
   en: {
     name: 'English',
     native_name: 'English',
   },
-  zh_TW: { 
+  /* zh_TW: {
     name: 'Traditional Chinese', 
     native_name: '繁體中文',
+  },*/
+  zh_CN: {
+    name: 'Simplified Chinese',
+    native_name: '简体中文',
   },
 };
 
