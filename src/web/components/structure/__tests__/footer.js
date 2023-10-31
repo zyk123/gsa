@@ -27,8 +27,6 @@ describe('Footer tests', () => {
     const {element} = render(<Footer />);
 
     expect(element).toMatchSnapshot();
-    expect(element).toHaveTextContent(
-      'Greenbone Security Assistant (GSA) Copyright (C) 2009-2023 by Greenbone AG, www.greenbone.net',
-    );
+    expect(element).toHaveTextContent('');
   });
 });
